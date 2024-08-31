@@ -1,0 +1,51 @@
+CORS :- cross origin resourse sharing.
+
+backend is running on localhost and port is :4000
+
+//http:notes.app.com
+
+react app frontend: localhost:3000
+
+--> any frontend be able to request you? --> cleient side ? Ans :NO 
+//http:notes.app.netlify.com
+
+cross origin --> different origin 
+-->frontend
+-->backend
+
+--> Cors : allows you to define which client or frontend should be able to request you.
+
+cors({origin: 'https:notes.app.netlify.com'}) //only localhost:3000 can request 3001
+cors({origin: '*'}) any frontend can request you
+
+register and login system
+
+-->user schema and model
+--> while registering will be hashing password with bcrypt
+--> while logging we will be comparing the password using bcrypt and creating a token with the help of jwt
+
+noteModel:
+title
+description
+status
+userId==> id of UserModel(mongodb id)
+
+-->3 kind of relationships
+1-1 ,1-many, many-many
+
+a user can create multiple notes:
+user - 1
+notes-many(userId)
+
+1-many relationships
+
+
+==> model is done
+==> route for it -->to access these route the user should be authenticated
+==> to check the authentication ==> auth middleware
+
+
+
+
+
+
